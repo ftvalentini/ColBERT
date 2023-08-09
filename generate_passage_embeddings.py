@@ -40,7 +40,7 @@ def main():
 
     with Run().context(RunConfig(nranks=1, root=args.out_dir, index_root=args.out_dir)):
         config = ColBERTConfig(
-            doc_maxlen=1000, # Set to 1000 to avoid truncation TODO default is 220
+            doc_maxlen=512, # NOTE set to 512 because colbertv2 uses 512 (it is based on bert)
             nbits=2, 
             # experiment=None,
         )
